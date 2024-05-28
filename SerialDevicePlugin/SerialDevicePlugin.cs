@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SerialDevicePlugin
 {
-    public class Class1
+    public class SerialDevicePlugin
     {
     }
 }
