@@ -43,31 +43,31 @@ namespace SerialDevicePlugin
         }
 
         //COMポートを開く
-        private void openPort()
+        private void OpenPort()
         {
 
         }
 
         //COMポートを閉じる
-        private void closePort()
+        private void ClosePort()
         {
 
         }
 
         //ハンドルを操作したときに実行：LeverMovedイベント
-        private void onLeverMoved(int axis, int notch)
+        private void OnLeverMoved(int axis, int notch)
         {
 
         }
 
         //キーを押したときに実行：KeyDownイベント
-        private void onKeyDown(int axis, int keyCode)
+        private void OnKeyDown(int axis, int keyCode)
         {
 
         }
 
         //キーを離したときに実行：KeyUpイベント
-        private void onKeyUp(int axis, int keyCode)
+        private void OnKeyUp(int axis, int keyCode)
         {
 
         }
