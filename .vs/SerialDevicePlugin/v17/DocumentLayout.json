@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "F:\\RailSim_Serial-Device-Plugin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|f:\\railsim_serial-device-plugin\\serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|F:\\RailSim_Serial-Device-Plugin\\serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|F:\\RailSim_Serial-Device-Plugin\\serialdeviceplugin\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|F:\\RailSim_Serial-Device-Plugin\\serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|f:\\railsim_serial-device-plugin\\serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,23 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs",
-              "RelativeDocumentMoniker": "SerialDevicePlugin\\FormConfig.cs",
-              "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "SerialDevicePlugin\\FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "Title": "SerialDevicePlugin.cs",
+              "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\SerialDevicePlugin.cs",
+              "RelativeDocumentMoniker": "SerialDevicePlugin\\SerialDevicePlugin.cs",
+              "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\SerialDevicePlugin.cs",
+              "RelativeToolTip": "SerialDevicePlugin\\SerialDevicePlugin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T06:26:57.135Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "WhenOpened": "2024-05-28T06:17:10.969Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,21 +46,27 @@
               "RelativeDocumentMoniker": "SerialDevicePlugin\\Settings.cs",
               "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\Settings.cs",
               "RelativeToolTip": "SerialDevicePlugin\\Settings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T06:21:04.71Z"
+              "WhenOpened": "2024-05-28T06:21:04.71Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SerialDevicePlugin.cs",
-              "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\SerialDevicePlugin.cs",
-              "RelativeDocumentMoniker": "SerialDevicePlugin\\SerialDevicePlugin.cs",
-              "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\SerialDevicePlugin.cs",
-              "RelativeToolTip": "SerialDevicePlugin\\SerialDevicePlugin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Title": "FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs",
+              "RelativeDocumentMoniker": "SerialDevicePlugin\\FormConfig.cs",
+              "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "RelativeToolTip": "SerialDevicePlugin\\FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T06:17:10.969Z"
+              "WhenOpened": "2024-05-28T06:26:57.135Z",
+              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
             }
           ]
         }
