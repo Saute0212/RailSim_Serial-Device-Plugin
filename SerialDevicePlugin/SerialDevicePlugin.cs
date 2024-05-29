@@ -33,7 +33,10 @@ namespace SerialDevicePlugin
         //プラグインの設定画面を表示
         public void Configure(IWin32Window owner)
         {
-
+            using (FormConfig form = new FormConfig())
+            {
+                form.ShowDialog(owner);
+            }
         }
 
         //BVEの終了時に実行
