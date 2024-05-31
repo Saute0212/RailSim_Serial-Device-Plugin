@@ -8,6 +8,8 @@ namespace SerialDevicePlugin
     //"Mackoy.Bvets.IInputDevice"のクラスを継承
     public class SerialDevicePlugin : Mackoy.Bvets.IInputDevice
     {
+        private SerialPort SelectedPort = null; //選択したCOMポート
+
         public event InputEventHandler KeyDown; //キーが押されたときのイベント
         public event InputEventHandler KeyUp; //キーを離したときのイベント
         public event InputEventHandler LeverMoved; //ハンドルを操作したときのイベント
