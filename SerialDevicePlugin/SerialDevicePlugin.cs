@@ -10,6 +10,8 @@ namespace SerialDevicePlugin
     {
         private SerialPort SelectedPort = null; //選択したCOMポート
 
+        public static Settings settings = null;
+
         public event InputEventHandler KeyDown; //キーが押されたときのイベント
         public event InputEventHandler KeyUp; //キーを離したときのイベント
         public event InputEventHandler LeverMoved; //ハンドルを操作したときのイベント
@@ -17,7 +19,7 @@ namespace SerialDevicePlugin
         //プラグインが読み込まれたときに実行
         public void Load(string SettingsXmlPath)
         {
-
+            settings = Settings.LoadFromXml(SettingsXmlPath);
         }
 
         //プラグイン・シナリオが読み込まれたときに実行

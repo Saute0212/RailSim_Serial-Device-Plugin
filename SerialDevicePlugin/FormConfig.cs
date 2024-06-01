@@ -15,6 +15,8 @@ namespace SerialDevicePlugin
         public FormConfig()
         {
             InitializeComponent();
+            string[] ComSpeed = {"300", "600", "1200", "2400", "4800", "9600", "14400", "19200", "38400", "57600", "115200"};
+            ComSpeedList.Items.AddRange( ComSpeed );
             label2.Text = "Failed";
             ReadingComPorts();
         }
@@ -22,6 +24,7 @@ namespace SerialDevicePlugin
         //接続されているCOMポートの読み込み
         public void ReadingComPorts()
         {
+            ComPorts.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {

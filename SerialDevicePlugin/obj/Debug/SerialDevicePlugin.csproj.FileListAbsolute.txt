@@ -1,0 +1,10 @@
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\bin\Debug\SerialDevicePlugin.dll
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\bin\Debug\SerialDevicePlugin.pdb
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\bin\Debug\Mackoy.IInputDevice.DLL
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDevicePlugin.csproj.AssemblyReference.cache
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDevicePlugin.FormConfig.resources
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDevicePlugin.csproj.GenerateResource.cache
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDevicePlugin.csproj.CoreCompileInputs.cache
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDe.276117AC.Up2Date
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDevicePlugin.dll
+F:\RailSim_Serial-Device-Plugin\SerialDevicePlugin\obj\Debug\SerialDevicePlugin.pdb
