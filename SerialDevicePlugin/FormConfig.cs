@@ -15,6 +15,7 @@ namespace SerialDevicePlugin
         public FormConfig()
         {
             InitializeComponent();
+            label2.Text = "Failed";
             ReadingComPorts();
         }
 
@@ -32,6 +33,24 @@ namespace SerialDevicePlugin
         private void Reloading_Click(object sender, EventArgs e)
         {
             ReadingComPorts();
+        }
+
+        //マイコンとの接続確認
+        private void ConfirmConnection_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //"OK"がクリック
+        private void Ok_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //"Cancel"がクリック
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
