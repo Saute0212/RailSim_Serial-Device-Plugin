@@ -20,12 +20,22 @@ namespace SerialDevicePlugin
         public void Load(string SettingsXmlPath)
         {
             settings = Settings.LoadFromXml(SettingsXmlPath);
+
+            OpenPort();
+
+            try
+            {
+                SelectedPort.Write("SerialDevicePlugin\n");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //プラグイン・シナリオが読み込まれたときに実行
         public void SetAxisRanges(int[][] ranges)
         {
-
         }
 
         //毎フレーム実行
@@ -46,19 +56,45 @@ namespace SerialDevicePlugin
         //BVEの終了時に実行
         public void Dispose()
         {
+            ClosePort();
 
+            if(settings != null)
+            {
+                settings.SaveToXml();
+                settings = null;
+            }
         }
 
         //COMポートを開く
         private void OpenPort()
         {
-
+            try
+            {
+                SelectedPort = new SerialPort("COM" + settings.Port.ToString(), settings.Speed, Parity.None, 8, StopBits.One);
+                SelectedPort.Open();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClosePort();
+            }
         }
 
         //COMポートを閉じる
         private void ClosePort()
         {
+            if(SelectedPort != null)
+            {
+                try
+                {
+                    SelectedPort.Close();
+                }
+                catch
+                {
+                }
 
+                SelectedPort = null;
+            }
         }
 
         //ハンドルを操作したときに実行：LeverMovedイベント

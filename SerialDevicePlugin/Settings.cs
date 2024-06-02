@@ -12,6 +12,9 @@ namespace SerialDevicePlugin
         private const string filename = "SerialDevicePlugin.xml"; //ファイル名の指定
         private string directory = string.Empty; //ディレクトリ
 
+        private int port = 0;
+        private int speed = 0;
+
         //各種設定をXMLに保存
         public void SaveToXml()
         {
@@ -58,6 +61,18 @@ namespace SerialDevicePlugin
             settings.directory = directory;
 
             return settings;
+        }
+
+        public int Port
+        {
+            get { return port; }
+            set { port = value; }
+        }
+
+        public int Speed
+        {
+            get { return speed; }
+            set { speed = value; }
         }
     }
 }
