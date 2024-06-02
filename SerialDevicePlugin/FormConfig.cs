@@ -41,7 +41,63 @@ namespace SerialDevicePlugin
         //マイコンとの接続確認
         private void ConfirmConnection_Click(object sender, EventArgs e)
         {
+            SerialPort TestPort = null;
+            bool unconnet_flag = false;
 
+            try
+            {
+                TestPort = new SerialPort("COM" + ComPorts.Items.ToString(), int.Parse(ComPorts.Items.ToString()), Parity.None, 8, StopBits.One);
+                TestPort.Open();
+            }
+            catch
+            {
+                unconnet_flag = true;
+            }
+
+            if(!unconnet_flag)
+            {
+                try
+                {
+                    TestPort.Write("SerialDevicePlugin\n");
+                }
+                catch
+                {
+                    unconnet_flag = true;
+                }
+
+                try
+                {
+                    TestPort.Write("CommunicationConfirmation\n");
+                }
+                catch
+                {
+                    unconnet_flag = true;
+                }
+            }
+
+            if(!unconnet_flag && TestPort != null)
+            {
+                try
+                {
+                    TestPort.Close();
+                    TestPort = null;
+                }
+                catch(Exception ex)
+                {
+                    unconnet_flag = true;
+                    MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                
+            }
+
+            //接続確認結果の表示
+            if(unconnet_flag)
+            {
+                label2.Text = "Connection Failed";
+            }
+            else
+            {
+                label2.Text = "Connection Success";
+            }
         }
 
         //"OK"がクリック
@@ -53,7 +109,15 @@ namespace SerialDevicePlugin
         //"Cancel"がクリック
         private void Cancel_Click(object sender, EventArgs e)
         {
-
+            //フォームを閉じる
+            try
+            {
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
