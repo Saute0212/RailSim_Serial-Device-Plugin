@@ -23,13 +23,16 @@ namespace SerialDevicePlugin
 
             OpenPort();
 
-            try
+            if (SelectedPort != null)
             {
-                SelectedPort.Write("SerialDevicePlugin\n");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    SelectedPort.Write("SerialDevicePlugin\n");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -41,7 +44,10 @@ namespace SerialDevicePlugin
         //毎フレーム実行
         public void Tick()
         {
-
+            if(SelectedPort == null)
+            {
+                return;
+            }
         }
 
         //プラグインの設定画面を表示
