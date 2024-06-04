@@ -9,6 +9,7 @@ namespace SerialDevicePlugin
     public class SerialDevicePlugin : Mackoy.Bvets.IInputDevice
     {
         private SerialPort SelectedPort = null; //選択したCOMポート
+        private string lastWord = string.Empty;
 
         public static Settings settings = null;
 
@@ -48,6 +49,32 @@ namespace SerialDevicePlugin
             {
                 return;
             }
+
+            string text;
+            try
+            {
+                text = SelectedPort.ReadExisting();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClosePort();
+                return;
+            }
+
+            if(text.Length == 0)
+            {
+                return;
+            }
+
+            //制御コードに応じてイベント発生
+            string[] words = (lastWord + text).Split('\r');
+            for(int i = 0; i < words.Length -1; i++)
+            {
+
+            }
+
+            lastWord = words[words.Length - 1];
         }
 
         //プラグインの設定画面を表示
@@ -106,19 +133,28 @@ namespace SerialDevicePlugin
         //ハンドルを操作したときに実行：LeverMovedイベント
         private void OnLeverMoved(int axis, int notch)
         {
-
+            if(LeverMoved != null)
+            {
+                LeverMoved(this, new InputEventArgs(axis, notch));
+            }
         }
 
         //キーを押したときに実行：KeyDownイベント
         private void OnKeyDown(int axis, int keyCode)
         {
-
+            if(LeverMoved != null)
+            {
+                KeyDown(this, new InputEventArgs(axis, keyCode));
+            }
         }
 
         //キーを離したときに実行：KeyUpイベント
         private void OnKeyUp(int axis, int keyCode)
         {
-
+            if(LeverMoved != null)
+            {
+                KeyUp(this, new InputEventArgs(axis, keyCode));
+            }
         }
     }
 }

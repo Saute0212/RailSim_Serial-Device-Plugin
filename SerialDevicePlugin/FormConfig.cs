@@ -15,6 +15,10 @@ namespace SerialDevicePlugin
         public FormConfig()
         {
             InitializeComponent();
+            //フォームのサイズ指定
+            MinimumSize = new Size(455, 505);
+            MaximumSize = new Size(455, 505);
+
             string[] ComSpeed = {"300", "600", "1200", "2400", "4800", "9600", "14400", "19200", "38400", "57600", "115200"};
             ComSpeedList.Items.AddRange( ComSpeed );
             label2.Text = "Failed";
@@ -92,11 +96,11 @@ namespace SerialDevicePlugin
             //接続確認結果の表示
             if(unconnet_flag)
             {
-                label2.Text = "Connection Failed";
+                label2.Text = "Failed";
             }
             else
             {
-                label2.Text = "Connection Success";
+                label2.Text = "Success";
             }
         }
 

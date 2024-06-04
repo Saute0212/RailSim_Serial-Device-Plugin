@@ -12,8 +12,8 @@ namespace SerialDevicePlugin
         private const string filename = "SerialDevicePlugin.xml"; //ファイル名の指定
         private string directory = string.Empty; //ディレクトリ
 
-        private int port = 0;
-        private int speed = 0;
+        private int port = 0; //COMポート番号
+        private int speed = 9600; //シリアル通信速度
 
         //各種設定をXMLに保存
         public void SaveToXml()
