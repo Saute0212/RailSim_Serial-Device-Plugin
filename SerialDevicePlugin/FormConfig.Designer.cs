@@ -118,7 +118,7 @@
             // ConfirmConnection
             // 
             this.ConfirmConnection.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ConfirmConnection.Location = new System.Drawing.Point(260, 55);
+            this.ConfirmConnection.Location = new System.Drawing.Point(299, 55);
             this.ConfirmConnection.Name = "ConfirmConnection";
             this.ConfirmConnection.Size = new System.Drawing.Size(75, 25);
             this.ConfirmConnection.TabIndex = 3;
@@ -130,7 +130,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(351, 59);
+            this.label2.Location = new System.Drawing.Point(390, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 4;
@@ -139,7 +139,7 @@
             // Ok
             // 
             this.Ok.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Ok.Location = new System.Drawing.Point(260, 424);
+            this.Ok.Location = new System.Drawing.Point(280, 425);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(70, 35);
             this.Ok.TabIndex = 5;
@@ -150,7 +150,7 @@
             // Cancel
             // 
             this.Cancel.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Cancel.Location = new System.Drawing.Point(350, 424);
+            this.Cancel.Location = new System.Drawing.Point(370, 425);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(70, 35);
             this.Cancel.TabIndex = 6;
@@ -184,17 +184,18 @@
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(6, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(431, 64);
+            this.label4.Size = new System.Drawing.Size(447, 64);
             this.label4.TabIndex = 9;
-            this.label4.Text = "-----------------------------------------------------\r\n\r\n\r\n\r\n";
+            this.label4.Text = "-------------------------------------------------------\r\n\r\n\r\n\r\n";
             // 
             // Btn1List
             // 
+            this.Btn1List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn1List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn1List.FormattingEnabled = true;
-            this.Btn1List.Location = new System.Drawing.Point(89, 108);
+            this.Btn1List.Location = new System.Drawing.Point(77, 108);
             this.Btn1List.Name = "Btn1List";
-            this.Btn1List.Size = new System.Drawing.Size(108, 24);
+            this.Btn1List.Size = new System.Drawing.Size(140, 24);
             this.Btn1List.TabIndex = 10;
             // 
             // label5
@@ -219,11 +220,12 @@
             // 
             // Btn2List
             // 
+            this.Btn2List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn2List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn2List.FormattingEnabled = true;
-            this.Btn2List.Location = new System.Drawing.Point(89, 138);
+            this.Btn2List.Location = new System.Drawing.Point(77, 138);
             this.Btn2List.Name = "Btn2List";
-            this.Btn2List.Size = new System.Drawing.Size(108, 24);
+            this.Btn2List.Size = new System.Drawing.Size(140, 24);
             this.Btn2List.TabIndex = 12;
             // 
             // label7
@@ -238,11 +240,12 @@
             // 
             // Btn3List
             // 
+            this.Btn3List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn3List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn3List.FormattingEnabled = true;
-            this.Btn3List.Location = new System.Drawing.Point(89, 168);
+            this.Btn3List.Location = new System.Drawing.Point(77, 168);
             this.Btn3List.Name = "Btn3List";
-            this.Btn3List.Size = new System.Drawing.Size(108, 24);
+            this.Btn3List.Size = new System.Drawing.Size(140, 24);
             this.Btn3List.TabIndex = 14;
             // 
             // label8
@@ -257,11 +260,12 @@
             // 
             // Btn4List
             // 
+            this.Btn4List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn4List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn4List.FormattingEnabled = true;
-            this.Btn4List.Location = new System.Drawing.Point(89, 198);
+            this.Btn4List.Location = new System.Drawing.Point(77, 198);
             this.Btn4List.Name = "Btn4List";
-            this.Btn4List.Size = new System.Drawing.Size(108, 24);
+            this.Btn4List.Size = new System.Drawing.Size(140, 24);
             this.Btn4List.TabIndex = 16;
             // 
             // label9
@@ -276,11 +280,12 @@
             // 
             // Btn5List
             // 
+            this.Btn5List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn5List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn5List.FormattingEnabled = true;
-            this.Btn5List.Location = new System.Drawing.Point(89, 228);
+            this.Btn5List.Location = new System.Drawing.Point(77, 228);
             this.Btn5List.Name = "Btn5List";
-            this.Btn5List.Size = new System.Drawing.Size(108, 24);
+            this.Btn5List.Size = new System.Drawing.Size(140, 24);
             this.Btn5List.TabIndex = 18;
             // 
             // label10
@@ -295,11 +300,12 @@
             // 
             // Btn6List
             // 
+            this.Btn6List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn6List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn6List.FormattingEnabled = true;
-            this.Btn6List.Location = new System.Drawing.Point(89, 258);
+            this.Btn6List.Location = new System.Drawing.Point(77, 258);
             this.Btn6List.Name = "Btn6List";
-            this.Btn6List.Size = new System.Drawing.Size(108, 24);
+            this.Btn6List.Size = new System.Drawing.Size(140, 24);
             this.Btn6List.TabIndex = 20;
             // 
             // label11
@@ -314,11 +320,12 @@
             // 
             // Btn7List
             // 
+            this.Btn7List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn7List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn7List.FormattingEnabled = true;
-            this.Btn7List.Location = new System.Drawing.Point(89, 288);
+            this.Btn7List.Location = new System.Drawing.Point(77, 288);
             this.Btn7List.Name = "Btn7List";
-            this.Btn7List.Size = new System.Drawing.Size(108, 24);
+            this.Btn7List.Size = new System.Drawing.Size(140, 24);
             this.Btn7List.TabIndex = 22;
             // 
             // label12
@@ -333,11 +340,12 @@
             // 
             // Btn8List
             // 
+            this.Btn8List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn8List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn8List.FormattingEnabled = true;
-            this.Btn8List.Location = new System.Drawing.Point(89, 318);
+            this.Btn8List.Location = new System.Drawing.Point(77, 318);
             this.Btn8List.Name = "Btn8List";
-            this.Btn8List.Size = new System.Drawing.Size(108, 24);
+            this.Btn8List.Size = new System.Drawing.Size(140, 24);
             this.Btn8List.TabIndex = 24;
             // 
             // label13
@@ -352,11 +360,12 @@
             // 
             // Btn9List
             // 
+            this.Btn9List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn9List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn9List.FormattingEnabled = true;
-            this.Btn9List.Location = new System.Drawing.Point(89, 348);
+            this.Btn9List.Location = new System.Drawing.Point(77, 348);
             this.Btn9List.Name = "Btn9List";
-            this.Btn9List.Size = new System.Drawing.Size(108, 24);
+            this.Btn9List.Size = new System.Drawing.Size(140, 24);
             this.Btn9List.TabIndex = 26;
             // 
             // label14
@@ -371,11 +380,12 @@
             // 
             // Btn10List
             // 
+            this.Btn10List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn10List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn10List.FormattingEnabled = true;
-            this.Btn10List.Location = new System.Drawing.Point(89, 378);
+            this.Btn10List.Location = new System.Drawing.Point(77, 378);
             this.Btn10List.Name = "Btn10List";
-            this.Btn10List.Size = new System.Drawing.Size(108, 24);
+            this.Btn10List.Size = new System.Drawing.Size(140, 24);
             this.Btn10List.TabIndex = 28;
             // 
             // label15
@@ -390,11 +400,12 @@
             // 
             // Btn11List
             // 
+            this.Btn11List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn11List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn11List.FormattingEnabled = true;
-            this.Btn11List.Location = new System.Drawing.Point(312, 108);
+            this.Btn11List.Location = new System.Drawing.Point(300, 108);
             this.Btn11List.Name = "Btn11List";
-            this.Btn11List.Size = new System.Drawing.Size(108, 24);
+            this.Btn11List.Size = new System.Drawing.Size(140, 24);
             this.Btn11List.TabIndex = 30;
             // 
             // label16
@@ -409,11 +420,12 @@
             // 
             // Btn12List
             // 
+            this.Btn12List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn12List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn12List.FormattingEnabled = true;
-            this.Btn12List.Location = new System.Drawing.Point(312, 138);
+            this.Btn12List.Location = new System.Drawing.Point(300, 138);
             this.Btn12List.Name = "Btn12List";
-            this.Btn12List.Size = new System.Drawing.Size(108, 24);
+            this.Btn12List.Size = new System.Drawing.Size(140, 24);
             this.Btn12List.TabIndex = 32;
             // 
             // label17
@@ -428,11 +440,12 @@
             // 
             // Btn13List
             // 
+            this.Btn13List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn13List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn13List.FormattingEnabled = true;
-            this.Btn13List.Location = new System.Drawing.Point(312, 168);
+            this.Btn13List.Location = new System.Drawing.Point(300, 168);
             this.Btn13List.Name = "Btn13List";
-            this.Btn13List.Size = new System.Drawing.Size(108, 24);
+            this.Btn13List.Size = new System.Drawing.Size(140, 24);
             this.Btn13List.TabIndex = 34;
             // 
             // label18
@@ -447,11 +460,12 @@
             // 
             // Btn14List
             // 
+            this.Btn14List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn14List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn14List.FormattingEnabled = true;
-            this.Btn14List.Location = new System.Drawing.Point(312, 198);
+            this.Btn14List.Location = new System.Drawing.Point(300, 198);
             this.Btn14List.Name = "Btn14List";
-            this.Btn14List.Size = new System.Drawing.Size(108, 24);
+            this.Btn14List.Size = new System.Drawing.Size(140, 24);
             this.Btn14List.TabIndex = 36;
             // 
             // label19
@@ -466,11 +480,12 @@
             // 
             // Btn15List
             // 
+            this.Btn15List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn15List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn15List.FormattingEnabled = true;
-            this.Btn15List.Location = new System.Drawing.Point(312, 228);
+            this.Btn15List.Location = new System.Drawing.Point(300, 228);
             this.Btn15List.Name = "Btn15List";
-            this.Btn15List.Size = new System.Drawing.Size(108, 24);
+            this.Btn15List.Size = new System.Drawing.Size(140, 24);
             this.Btn15List.TabIndex = 38;
             // 
             // label20
@@ -485,11 +500,12 @@
             // 
             // Btn16List
             // 
+            this.Btn16List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn16List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn16List.FormattingEnabled = true;
-            this.Btn16List.Location = new System.Drawing.Point(312, 258);
+            this.Btn16List.Location = new System.Drawing.Point(300, 258);
             this.Btn16List.Name = "Btn16List";
-            this.Btn16List.Size = new System.Drawing.Size(108, 24);
+            this.Btn16List.Size = new System.Drawing.Size(140, 24);
             this.Btn16List.TabIndex = 40;
             // 
             // label21
@@ -504,11 +520,12 @@
             // 
             // Btn17List
             // 
+            this.Btn17List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn17List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn17List.FormattingEnabled = true;
-            this.Btn17List.Location = new System.Drawing.Point(312, 288);
+            this.Btn17List.Location = new System.Drawing.Point(300, 288);
             this.Btn17List.Name = "Btn17List";
-            this.Btn17List.Size = new System.Drawing.Size(108, 24);
+            this.Btn17List.Size = new System.Drawing.Size(140, 24);
             this.Btn17List.TabIndex = 42;
             // 
             // label22
@@ -523,11 +540,12 @@
             // 
             // Btn18List
             // 
+            this.Btn18List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn18List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn18List.FormattingEnabled = true;
-            this.Btn18List.Location = new System.Drawing.Point(312, 318);
+            this.Btn18List.Location = new System.Drawing.Point(300, 318);
             this.Btn18List.Name = "Btn18List";
-            this.Btn18List.Size = new System.Drawing.Size(108, 24);
+            this.Btn18List.Size = new System.Drawing.Size(140, 24);
             this.Btn18List.TabIndex = 44;
             // 
             // label23
@@ -542,11 +560,12 @@
             // 
             // Btn19List
             // 
+            this.Btn19List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn19List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn19List.FormattingEnabled = true;
-            this.Btn19List.Location = new System.Drawing.Point(312, 348);
+            this.Btn19List.Location = new System.Drawing.Point(300, 348);
             this.Btn19List.Name = "Btn19List";
-            this.Btn19List.Size = new System.Drawing.Size(108, 24);
+            this.Btn19List.Size = new System.Drawing.Size(140, 24);
             this.Btn19List.TabIndex = 46;
             // 
             // label24
@@ -561,11 +580,12 @@
             // 
             // Btn20List
             // 
+            this.Btn20List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Btn20List.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Btn20List.FormattingEnabled = true;
-            this.Btn20List.Location = new System.Drawing.Point(312, 378);
+            this.Btn20List.Location = new System.Drawing.Point(300, 378);
             this.Btn20List.Name = "Btn20List";
-            this.Btn20List.Size = new System.Drawing.Size(108, 24);
+            this.Btn20List.Size = new System.Drawing.Size(140, 24);
             this.Btn20List.TabIndex = 48;
             // 
             // label25
@@ -574,15 +594,15 @@
             this.label25.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label25.Location = new System.Drawing.Point(6, 406);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(431, 64);
+            this.label25.Size = new System.Drawing.Size(447, 64);
             this.label25.TabIndex = 50;
-            this.label25.Text = "-----------------------------------------------------\r\n\r\n\r\n\r\n";
+            this.label25.Text = "-------------------------------------------------------\r\n\r\n\r\n\r\n";
             // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 466);
+            this.ClientSize = new System.Drawing.Size(459, 466);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.Btn20List);
             this.Controls.Add(this.label23);

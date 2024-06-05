@@ -21,8 +21,8 @@ namespace SerialDevicePlugin
         {
             InitializeComponent();
             //フォームのサイズ指定
-            MinimumSize = new Size(455, 505);
-            MaximumSize = new Size(455, 505);
+            MinimumSize = new Size(475, 505);
+            MaximumSize = new Size(475, 505);
 
             //読み込み時に実行する関数
             SetUp();
