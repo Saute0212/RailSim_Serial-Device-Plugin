@@ -16,7 +16,25 @@
   ※Visual Studioインストール時に"個別のコンポーネント"より".Net Framework 3.5"のインストールが必要
 
 # 入力デバイスプラグインの仕様
-- 現在仕様未決定
+サポートしている主幹制御器(マスコン)・ボタンなどは次のとおりである。<br>
+<table id="table1" border="1">
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+</table>
+
+<table id="table2" border="1">
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+</table>
+
+次の表の制御コードを送信することで、外部デバイスによる制御を行うことができる。<br>
+<table id="table3" border="1">
+  <tr><td>制御コード</td><td>発生イベント(axis, value)</td><td>動作</td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+</table>
 
 # 入力デバイスプラグイン導入方法
 ① ディレクトリ```C:\Program Files (x86)\mackoy\BveTs5\Input Devices```に入力デバイスプラグインのDLLファイルを追加する。<br>
