@@ -17,21 +17,30 @@
 
 # 入力デバイスプラグインの仕様
 サポートしている主幹制御器(マスコン)・ボタンなどは次のとおりである。<br>
+- ワンハンドルマスコン
 <table id="table1" border="1">
-  <tr><td></td><td></td><td></td></tr>
-  <tr><td></td><td></td><td></td></tr>
-  <tr><td></td><td></td><td></td></tr>
+  <tr><td>力行</td><td>5段</td></tr>
+  <tr><td>ニュートラル</td><td>1段</td></tr>
+  <tr><td>ブレーキ</td><td>8(常用)+1(非常)段</td></tr>
+  <tr><td>レバーサー</td><td>前・中・後</td></tr>
+  <tr><td>ボタン</td><td>20個</td></tr>
 </table>
 
+- ツーハンドルマスコン
 <table id="table2" border="1">
-  <tr><td></td><td></td><td></td></tr>
-  <tr><td></td><td></td><td></td></tr>
-  <tr><td></td><td></td><td></td></tr>
+  <tr><td>力行</td><td>20段</td></tr>
+  <tr><td>ニュートラル</td><td>1段</td></tr>
+  <tr><td>抑速ブレーキ</td><td>20段</td></tr>
+  <tr><td>ブレーキ</td><td>8(常用)+1(非常)段</td></tr>
+  <tr><td>レバーサー</td><td>前・中・後</td></tr>
+  <tr><td>ボタン</td><td>20個</td></tr>
 </table>
+<br>
 
 次の表の制御コードを送信することで、外部デバイスによる制御を行うことができる。<br>
 <table id="table3" border="1">
   <tr><td>制御コード</td><td>発生イベント(axis, value)</td><td>動作</td></tr>
+  <tr><td></td><td></td><td></td></tr>
   <tr><td></td><td></td><td></td></tr>
   <tr><td></td><td></td><td></td></tr>
 </table>
