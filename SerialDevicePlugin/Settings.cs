@@ -13,7 +13,7 @@ namespace SerialDevicePlugin
         private string directory = string.Empty; //ディレクトリ
 
         private int port = 0; //COMポート番号
-        private int speed = 9600; //シリアル通信速度
+        private int speed = 5; //シリアル通信速度(Default:9600bps)
 
         //各ボタンの設定
         private int[] button1  = { -1, 0 };

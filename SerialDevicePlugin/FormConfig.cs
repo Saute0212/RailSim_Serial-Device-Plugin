@@ -25,8 +25,8 @@ namespace SerialDevicePlugin
             MaximumSize = new Size(475, 505);
 
             //読み込み時に実行する関数
-            SetUp();
             ReadingComPorts();
+            SetUp();            
         }
 
         //接続されているCOMポートの読み込み
@@ -71,7 +71,7 @@ namespace SerialDevicePlugin
 
             if(SerialDevicePlugin.settings.Speed != 0)
             {
-                ComSpeedList.SelectedIndex = SerialDevicePlugin.settings.Speed -1;
+                ComSpeedList.SelectedIndex = SerialDevicePlugin.settings.Speed;
             }
 
             SelectDropDownList(Btn1List, SerialDevicePlugin.settings.Button1);
@@ -219,7 +219,7 @@ namespace SerialDevicePlugin
 
             if(ComSpeedList.SelectedIndex >= 0)
             {
-                SerialDevicePlugin.settings.Speed = ComSpeedList.SelectedIndex + 1;
+                SerialDevicePlugin.settings.Speed = ComSpeedList.SelectedIndex;
             }
 
             if(Btn1List.SelectedIndex >= 0)
