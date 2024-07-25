@@ -103,7 +103,7 @@ namespace SerialDevicePlugin
         {
             try
             {
-                SelectedPort = new SerialPort("COM" + settings.Port.ToString(), settings.Speed, Parity.None, 8, StopBits.One);
+                SelectedPort = new SerialPort(settings.Port, settings.Speed, Parity.None, 8, StopBits.One);
                 SelectedPort.Open();
             }
             catch(Exception ex)

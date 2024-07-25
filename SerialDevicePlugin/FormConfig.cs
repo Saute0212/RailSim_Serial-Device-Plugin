@@ -22,11 +22,11 @@ namespace SerialDevicePlugin
 
             //読み込み時に実行する関数
             ReadingComPorts();
-            SetUp();            
+            SetUp();
         }
 
         //接続されているCOMポートの読み込み
-        public void ReadingComPorts()
+        private void ReadingComPorts()
         {
             ComPorts.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
@@ -60,16 +60,8 @@ namespace SerialDevicePlugin
                 keyCodeTable.Add(new int[2] { -2, i });
             }
 
-            if(SerialDevicePlugin.settings.Port >=1 && SerialDevicePlugin.settings.Port <= 256)
-            {
-                ComPorts.SelectedIndex = SerialDevicePlugin.settings.Port - 1;
-            }
-
-            if(SerialDevicePlugin.settings.Speed != 0)
-            {
-                ComSpeedList.SelectedIndex = SerialDevicePlugin.settings.Speed;
-            }
-
+            SearchString(ComPorts, SerialDevicePlugin.settings.Port);
+            SearchNum(ComSpeedList, SerialDevicePlugin.settings.Speed);
             SelectDropDownList(Btn1List, SerialDevicePlugin.settings.Button1);
             SelectDropDownList(Btn2List, SerialDevicePlugin.settings.Button2);
             SelectDropDownList(Btn3List, SerialDevicePlugin.settings.Button3);
@@ -90,6 +82,52 @@ namespace SerialDevicePlugin
             SelectDropDownList(Btn18List, SerialDevicePlugin.settings.Button18);
             SelectDropDownList(Btn19List, SerialDevicePlugin.settings.Button19);
             SelectDropDownList(Btn20List, SerialDevicePlugin.settings.Button20);
+        }
+
+        //文字列をComboBoxから探索
+        private void SearchString(ComboBox list, string target)
+        {
+            bool ItemFound = false;
+            int cnt = 0;
+
+            foreach(string element in list.Items)
+            {
+                if(element == target)
+                {
+                    list.SelectedIndex = cnt;
+                    ItemFound = true;
+                    break;
+                }
+                cnt++;
+            }
+
+            if(!ItemFound)
+            {
+                list.SelectedIndex = -1;
+            }
+        }
+
+        //値(int型)をComboBoxから探索
+        private void SearchNum(ComboBox list, int target)
+        {
+            bool ItemFound = false;
+            int cnt = 0;
+
+            foreach(int element in list.Items)
+            {
+                if(element == target)
+                {
+                    list.SelectedIndex = cnt;
+                    ItemFound = true;
+                    break;
+                }
+                cnt++;
+            }
+
+            if(!ItemFound)
+            {
+                list.SelectedIndex = -1;
+            }
         }
 
         //ComboBoxへアイテムの追加
@@ -141,67 +179,46 @@ namespace SerialDevicePlugin
         private void Reloading_Click(object sender, EventArgs e)
         {
             ReadingComPorts();
+            SearchString(ComPorts, SerialDevicePlugin.settings.Port);
         }
 
         //マイコンとの接続確認
         private void ConfirmConnection_Click(object sender, EventArgs e)
         {
             SerialPort TestPort = null;
-            bool unconnet_flag = false;
+            bool ConnectionSuccess = false;
 
             try
             {
-                TestPort = new SerialPort("COM" + ComPorts.Items.ToString(), int.Parse(ComPorts.Items.ToString()), Parity.None, 8, StopBits.One);
+                TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComPorts.Items.ToString()), Parity.None, 8, StopBits.One);
                 TestPort.Open();
+                TestPort.Write("SerialDevicePlugin\n");
+                TestPort.Write("CommunicationConfirmation\n");
+                TestPort.Close();
+                TestPort = null;
+                ConnectionSuccess = true;
             }
-            catch
-            {
-                unconnet_flag = true;
-            }
-
-            if(!unconnet_flag)
-            {
-                try
-                {
-                    TestPort.Write("SerialDevicePlugin\n");
-                }
-                catch
-                {
-                    unconnet_flag = true;
-                }
-
-                try
-                {
-                    TestPort.Write("CommunicationConfirmation\n");
-                }
-                catch
-                {
-                    unconnet_flag = true;
-                }
-            }
-
-            if(!unconnet_flag && TestPort != null)
+            catch(Exception ex)
             {
                 try
                 {
                     TestPort.Close();
-                    TestPort = null;
                 }
-                catch(Exception ex)
+                catch
                 {
-                    unconnet_flag = true;
-                    MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }                
+                }
+
+                ConnectionSuccess = false;
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //接続確認結果の表示
-            if(unconnet_flag)
+            if(!ConnectionSuccess)
             {
-                label2.Text = "Failed";
+                label2.Text = "Success";
             }
             else
             {
-                label2.Text = "Success";
+                label2.Text = "Failure";
             }
         }
 
@@ -210,12 +227,12 @@ namespace SerialDevicePlugin
         {
             if(ComPorts.SelectedIndex >= 0)
             {
-                SerialDevicePlugin.settings.Port = ComPorts.SelectedIndex + 1;
+                SerialDevicePlugin.settings.Port = (string)ComPorts.SelectedItem;
             }
 
-            if(ComSpeedList.SelectedIndex >= 0)
+            if(ComSpeedList.SelectedIndex >= 0 && ComSpeedList.SelectedIndex <= 9)
             {
-                SerialDevicePlugin.settings.Speed = ComSpeedList.SelectedIndex;
+                SerialDevicePlugin.settings.Speed = (int)ComSpeedList.SelectedItem;
             }
 
             if(Btn1List.SelectedIndex >= 0)

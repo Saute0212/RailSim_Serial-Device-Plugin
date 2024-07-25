@@ -8,8 +8,8 @@ namespace SerialDevicePlugin
         private const string filename = "SerialDevicePlugin.xml"; //ファイル名の指定
         private string directory = string.Empty; //ディレクトリ
 
-        private int port = 0; //COMポート番号
-        private int speed = 5; //シリアル通信速度(Default:9600bps)
+        private string port = ""; //COMポート番号
+        private int speed = 9600; //シリアル通信速度(Default:9600bps)
 
         //各ボタンの設定
         private int[] button1  = { -1, 0 };
@@ -81,7 +81,7 @@ namespace SerialDevicePlugin
             return settings;
         }
 
-        public int Port
+        public string Port
         {
             get { return port; }
             set { port = value; }
