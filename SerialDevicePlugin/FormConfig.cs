@@ -227,11 +227,11 @@ namespace SerialDevicePlugin
             SerialPort TestPort = null;
             bool ConnectionSuccess = false;
 
-            if (ComPorts.SelectedIndex >= 0)
+            if (ComPorts.SelectedIndex >= 0 && ComSpeedList.SelectedIndex >= 0)
             {
                 try
                 {
-                    TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComPorts.Items.ToString()), Parity.None, 8, StopBits.One);
+                    TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComSpeedList.SelectedItem.ToString()), Parity.None, 8, StopBits.One);
                     TestPort.Open();
                     TestPort.Write("SerialDevicePlugin\n");
                     TestPort.Write("CommunicationConfirmation\n");
