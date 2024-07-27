@@ -8,6 +8,7 @@ namespace SerialDevicePlugin
 {
     public partial class FormConfig : Form
     {
+        string[] NumList = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         string[] ComSpeed = { "300", "600", "1200", "2400", "4800", "9600", "14400", "19200", "38400", "57600", "115200" };
         private string[] cabSwitchKeyTexts = { "Horn 1", "Horn 2", "Constant Speed Control", "Music Horn" };
         private string[] atsKeyTexts = new string[16];
@@ -30,6 +31,7 @@ namespace SerialDevicePlugin
         {
             ComPorts.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
+            ports = CharacterExtraction("COM", ports, NumList);
             foreach (string port in ports)
             {
                 ComPorts.Items.Add(port);
@@ -61,7 +63,7 @@ namespace SerialDevicePlugin
             }
 
             SearchString(ComPorts, SerialDevicePlugin.settings.Port);
-            SearchNum(ComSpeedList, SerialDevicePlugin.settings.Speed);
+            SearchNum(ComSpeedList, ComSpeed, SerialDevicePlugin.settings.Speed.ToString());
             SelectDropDownList(Btn1List, SerialDevicePlugin.settings.Button1);
             SelectDropDownList(Btn2List, SerialDevicePlugin.settings.Button2);
             SelectDropDownList(Btn3List, SerialDevicePlugin.settings.Button3);
@@ -82,6 +84,43 @@ namespace SerialDevicePlugin
             SelectDropDownList(Btn18List, SerialDevicePlugin.settings.Button18);
             SelectDropDownList(Btn19List, SerialDevicePlugin.settings.Button19);
             SelectDropDownList(Btn20List, SerialDevicePlugin.settings.Button20);
+        }
+
+        //COM番号の規格に修正
+        private string[] CharacterExtraction(string ignore, string[] str, string[] list)
+        {
+            if (ignore == null) throw new ArgumentNullException(nameof(ignore));
+            if (str == null) throw new ArgumentNullException(nameof (str));
+            if (list == null) throw new ArgumentNullException(nameof(list));
+
+            string[] result = new string[list.Length];
+            int index = 0;
+
+            foreach(string element in str)
+            {
+                string tmp = "";
+                for(int i = 3; i < element.Length; i++)
+                {
+                    for(int j = 0; j < list.Length; j++)
+                    {
+                        if (element[i].ToString() == list[j])
+                        {
+                            tmp += element[i].ToString();
+                        }
+                    }
+                }
+                result[index] = ignore + tmp;
+                index++;
+            }
+
+            if(result != null)
+            {
+                return result;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         //文字列をComboBoxから探索
@@ -108,12 +147,12 @@ namespace SerialDevicePlugin
         }
 
         //値(int型)をComboBoxから探索
-        private void SearchNum(ComboBox list, int target)
+        private void SearchNum(ComboBox list, string[] src, string target)
         {
             bool ItemFound = false;
             int cnt = 0;
 
-            foreach(int element in list.Items)
+            foreach(string element in src)
             {
                 if(element == target)
                 {
@@ -188,28 +227,31 @@ namespace SerialDevicePlugin
             SerialPort TestPort = null;
             bool ConnectionSuccess = false;
 
-            try
-            {
-                TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComPorts.Items.ToString()), Parity.None, 8, StopBits.One);
-                TestPort.Open();
-                TestPort.Write("SerialDevicePlugin\n");
-                TestPort.Write("CommunicationConfirmation\n");
-                TestPort.Close();
-                TestPort = null;
-                ConnectionSuccess = true;
-            }
-            catch(Exception ex)
+            if (ComPorts.SelectedIndex >= 0)
             {
                 try
                 {
+                    TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComPorts.Items.ToString()), Parity.None, 8, StopBits.One);
+                    TestPort.Open();
+                    TestPort.Write("SerialDevicePlugin\n");
+                    TestPort.Write("CommunicationConfirmation\n");
                     TestPort.Close();
+                    TestPort = null;
+                    ConnectionSuccess = true;
                 }
-                catch
+                catch (Exception ex)
                 {
-                }
+                    try
+                    {
+                        TestPort.Close();
+                    }
+                    catch
+                    {
+                    }
 
-                ConnectionSuccess = false;
-                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ConnectionSuccess = false;
+                    MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             if(!ConnectionSuccess)
@@ -230,9 +272,9 @@ namespace SerialDevicePlugin
                 SerialDevicePlugin.settings.Port = (string)ComPorts.SelectedItem;
             }
 
-            if(ComSpeedList.SelectedIndex >= 0 && ComSpeedList.SelectedIndex <= 9)
+            if(ComSpeedList.SelectedIndex >= 0 && ComSpeedList.SelectedIndex <= 10)
             {
-                SerialDevicePlugin.settings.Speed = (int)ComSpeedList.SelectedItem;
+                SerialDevicePlugin.settings.Speed = int.Parse(ComSpeedList.SelectedItem.ToString());
             }
 
             if(Btn1List.SelectedIndex >= 0)
