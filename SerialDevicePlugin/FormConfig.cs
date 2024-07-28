@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.IO;
 
 namespace SerialDevicePlugin
 {
@@ -13,6 +14,7 @@ namespace SerialDevicePlugin
         private string[] cabSwitchKeyTexts = { "Horn 1", "Horn 2", "Constant Speed Control", "Music Horn" };
         private string[] atsKeyTexts = new string[16];
         private List<int[]> keyCodeTable = new List<int[]>();
+        private SerialDevicePlugin SDP;
 
         public FormConfig()
         {
@@ -20,6 +22,8 @@ namespace SerialDevicePlugin
             //フォームのサイズ指定
             MinimumSize = new Size(475, 505);
             MaximumSize = new Size(475, 505);
+
+            SDP = new SerialDevicePlugin();
 
             //読み込み時に実行する関数
             ReadingComPorts();
@@ -224,33 +228,43 @@ namespace SerialDevicePlugin
         //マイコンとの接続確認
         private void ConfirmConnection_Click(object sender, EventArgs e)
         {
-            SerialPort TestPort = null;
             bool ConnectionSuccess = false;
 
-            if (ComPorts.SelectedIndex >= 0 && ComSpeedList.SelectedIndex >= 0)
+            try
             {
-                try
+                if(SDP.SelectedPort != null && SDP.SelectedPort.IsOpen)
                 {
-                    TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComSpeedList.SelectedItem.ToString()), Parity.None, 8, StopBits.One);
-                    TestPort.Open();
-                    TestPort.Write("SerialDevicePlugin\n");
-                    TestPort.Close();
-                    TestPort = null;
+                    SDP.SelectedPort.Close();
+                }
+
+                if(ComPorts.SelectedIndex >= 0 && ComSpeedList.SelectedIndex >= 0)
+                {
+                    SDP.SelectedPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComSpeedList.SelectedItem.ToString()), Parity.None, 8, StopBits.One);
+                    SDP.SelectedPort.WriteTimeout = 1000;
+                    SDP.SelectedPort.Open();
+                    SDP.SelectedPort.Write("SerialDevicePlugin\n");
                     ConnectionSuccess = true;
                 }
-                catch (Exception ex)
-                {
-                    try
-                    {
-                        TestPort.Close();
-                    }
-                    catch
-                    {
-                    }
-
-                    ConnectionSuccess = false;
-                    MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch(TimeoutException ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -TIMEOUT-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(UnauthorizedAccessException ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(IOException ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if(ConnectionSuccess)
@@ -259,7 +273,7 @@ namespace SerialDevicePlugin
             }
             else
             {
-                label2.Text = "Failure";
+                label2.Text = "Failed";
             }
         }
 

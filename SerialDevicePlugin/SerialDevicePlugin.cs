@@ -8,7 +8,7 @@ namespace SerialDevicePlugin
     //"Mackoy.Bvets.IInputDevice"のクラスを継承
     public class SerialDevicePlugin : Mackoy.Bvets.IInputDevice
     {
-        private SerialPort SelectedPort = null; //選択したCOMポート
+        public SerialPort SelectedPort = null; //選択したCOMポート
         private string lastWord = string.Empty;
 
         public static Settings settings = null;
@@ -23,18 +23,6 @@ namespace SerialDevicePlugin
             settings = Settings.LoadFromXml(SettingsXmlPath);
 
             OpenPort();
-
-            if (SelectedPort != null)
-            {
-                try
-                {
-                    SelectedPort.Write("SerialDevicePlugin\n");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Serial Device Plugin -ERROR-", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         //プラグイン・シナリオが読み込まれたときに実行
@@ -47,6 +35,7 @@ namespace SerialDevicePlugin
         {
             if(SelectedPort == null)
             {
+                OpenPort();
                 return;
             }
 
@@ -68,10 +57,22 @@ namespace SerialDevicePlugin
             }
 
             //制御コードに応じてイベント発生
-            string[] words = (lastWord + text).Split('\r');
+            string[] words = (lastWord + text).Split('\n');
             for(int i = 0; i < words.Length -1; i++)
             {
-
+                switch(words[i])
+                {
+                    //レバーサー
+                    case "LEV0F\r":
+                        OnLeverMoved(0, 1);
+                        break;
+                    case "LEV0C\r":
+                        OnLeverMoved(0, 0);
+                        break;
+                    case "LEV0B\r":
+                        OnLeverMoved(0, -1);
+                        break;
+                }
             }
 
             lastWord = words[words.Length - 1];
@@ -105,6 +106,7 @@ namespace SerialDevicePlugin
             {
                 SelectedPort = new SerialPort(settings.Port, settings.Speed, Parity.None, 8, StopBits.One);
                 SelectedPort.Open();
+                SelectedPort.Write("SerialDevicePlugin\n");
             }
             catch(Exception ex)
             {

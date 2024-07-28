@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "F:\\RailSim_Serial-Device-Plugin\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|F:\\RailSim_Serial-Device-Plugin\\serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|f:\\railsim_serial-device-plugin\\serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|F:\\RailSim_Serial-Device-Plugin\\serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\formconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|F:\\RailSim_Serial-Device-Plugin\\serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641A8065-E801-4F75-8DDA-5B14404CB44B}|SerialDevicePlugin\\SerialDevicePlugin.csproj|solutionrelative:serialdeviceplugin\\serialdeviceplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "SerialDevicePlugin.cs",
               "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\SerialDevicePlugin.cs",
               "RelativeDocumentMoniker": "SerialDevicePlugin\\SerialDevicePlugin.cs",
               "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\SerialDevicePlugin.cs",
               "RelativeToolTip": "SerialDevicePlugin\\SerialDevicePlugin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG8AAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T06:17:10.969Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Settings.cs",
               "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\Settings.cs",
               "RelativeDocumentMoniker": "SerialDevicePlugin\\Settings.cs",
@@ -57,13 +58,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FormConfig.cs",
               "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs",
               "RelativeDocumentMoniker": "SerialDevicePlugin\\FormConfig.cs",
               "ToolTip": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs",
               "RelativeToolTip": "SerialDevicePlugin\\FormConfig.cs",
-              "ViewState": "AQIAAOIAAAAAAAAAAAAmwJAAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T08:07:47.868Z",
               "IsPinned": true,
@@ -71,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "F:\\RailSim_Serial-Device-Plugin\\SerialDevicePlugin\\FormConfig.cs",
               "RelativeDocumentMoniker": "SerialDevicePlugin\\FormConfig.cs",
@@ -79,8 +80,7 @@
               "RelativeToolTip": "SerialDevicePlugin\\FormConfig.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T08:12:53.135Z",
-              "IsPinned": true,
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "IsPinned": true
             }
           ]
         }
