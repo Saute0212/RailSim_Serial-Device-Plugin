@@ -31,14 +31,14 @@ namespace SerialDevicePlugin
         {
             ComPorts.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
-            ports = CharacterExtraction("COM", ports, NumList);
+            ports = ComPortsFormatter("COM", ports, NumList);
             foreach (string port in ports)
             {
                 ComPorts.Items.Add(port);
             }
         }
 
-        //Formの初期設定関数
+        //初期設定関数
         private void SetUp()
         {
             //ComboBox・Label初期設定
@@ -62,8 +62,8 @@ namespace SerialDevicePlugin
                 keyCodeTable.Add(new int[2] { -2, i });
             }
 
-            SearchString(ComPorts, SerialDevicePlugin.settings.Port);
-            SearchNum(ComSpeedList, ComSpeed, SerialDevicePlugin.settings.Speed.ToString());
+            SelectComPort(ComPorts, SerialDevicePlugin.settings.Port);
+            SelectComSpeed(ComSpeedList, ComSpeed, SerialDevicePlugin.settings.Speed.ToString());
             SelectDropDownList(Btn1List, SerialDevicePlugin.settings.Button1);
             SelectDropDownList(Btn2List, SerialDevicePlugin.settings.Button2);
             SelectDropDownList(Btn3List, SerialDevicePlugin.settings.Button3);
@@ -86,14 +86,14 @@ namespace SerialDevicePlugin
             SelectDropDownList(Btn20List, SerialDevicePlugin.settings.Button20);
         }
 
-        //COM番号の規格に修正
-        private string[] CharacterExtraction(string ignore, string[] str, string[] list)
+        //COMポート用にフォーマットを修正(.NET Framework 3.5のバグ対応用)
+        private string[] ComPortsFormatter(string prefix, string[] str, string[] list)
         {
-            if (ignore == null) throw new ArgumentNullException(nameof(ignore));
+            if (prefix == null) throw new ArgumentNullException(nameof(prefix));
             if (str == null) throw new ArgumentNullException(nameof (str));
             if (list == null) throw new ArgumentNullException(nameof(list));
 
-            string[] result = new string[list.Length];
+            string[] result = new string[str.Length];
             int index = 0;
 
             foreach(string element in str)
@@ -109,7 +109,7 @@ namespace SerialDevicePlugin
                         }
                     }
                 }
-                result[index] = ignore + tmp;
+                result[index] = prefix + tmp;
                 index++;
             }
 
@@ -123,8 +123,8 @@ namespace SerialDevicePlugin
             }
         }
 
-        //文字列をComboBoxから探索
-        private void SearchString(ComboBox list, string target)
+        //COMポートをComboBoxから探索・設定
+        private void SelectComPort(ComboBox list, string target)
         {
             bool ItemFound = false;
             int cnt = 0;
@@ -146,8 +146,8 @@ namespace SerialDevicePlugin
             }
         }
 
-        //値(int型)をComboBoxから探索
-        private void SearchNum(ComboBox list, string[] src, string target)
+        //COMの通信速度をComboBoxから探索・設定
+        private void SelectComSpeed(ComboBox list, string[] src, string target)
         {
             bool ItemFound = false;
             int cnt = 0;
@@ -218,7 +218,7 @@ namespace SerialDevicePlugin
         private void Reloading_Click(object sender, EventArgs e)
         {
             ReadingComPorts();
-            SearchString(ComPorts, SerialDevicePlugin.settings.Port);
+            SelectComPort(ComPorts, SerialDevicePlugin.settings.Port);
         }
 
         //マイコンとの接続確認
@@ -234,7 +234,6 @@ namespace SerialDevicePlugin
                     TestPort = new SerialPort(ComPorts.SelectedItem.ToString(), int.Parse(ComSpeedList.SelectedItem.ToString()), Parity.None, 8, StopBits.One);
                     TestPort.Open();
                     TestPort.Write("SerialDevicePlugin\n");
-                    TestPort.Write("CommunicationConfirmation\n");
                     TestPort.Close();
                     TestPort = null;
                     ConnectionSuccess = true;
@@ -254,7 +253,7 @@ namespace SerialDevicePlugin
                 }
             }
 
-            if(!ConnectionSuccess)
+            if(ConnectionSuccess)
             {
                 label2.Text = "Success";
             }
@@ -270,6 +269,10 @@ namespace SerialDevicePlugin
             if(ComPorts.SelectedIndex >= 0)
             {
                 SerialDevicePlugin.settings.Port = (string)ComPorts.SelectedItem;
+            }
+            else
+            {
+                SerialDevicePlugin.settings.Port = "COM0";
             }
 
             if(ComSpeedList.SelectedIndex >= 0 && ComSpeedList.SelectedIndex <= 10)
